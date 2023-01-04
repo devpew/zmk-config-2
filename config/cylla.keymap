@@ -40,7 +40,7 @@
             >;
         };
 
-        BT_LAYER {
+        bt_layer {
             bindings = <
  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
