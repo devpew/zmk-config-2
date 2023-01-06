@@ -6,6 +6,7 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 
 / {
     keymap {
@@ -42,11 +43,11 @@
 
         bt_layer {
             bindings = <
- &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+ &bootloader  &reset  &bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &trans          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
+      &trans  &trans      &trans      &trans      &trans  &trans                &trans        &trans        &trans        &trans        &trans  &trans
+      &trans  &trans      &trans      &trans      &trans  &trans                &trans        &trans        &trans        &trans        &trans  &trans
+      &trans  &trans      &trans      &trans      &trans  &trans                &trans        &trans        &trans        &trans        &trans  &trans
+                          &trans      &trans      &trans  &trans  &trans        &trans        &trans        &trans        &trans        &trans
             >;
         };
     };
