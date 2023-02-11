@@ -13,19 +13,12 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // |   +   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   -   |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
-            // |  CAPS |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |                   |  N   |  M    |  ,    |  .   |   /   |   ~   |
-            //               |CTRL | ALT  | BSPC | INS  |  SPACE |  | ENTER | ESC  | BASE  | FUN   | L3   |
-
             bindings = <
- &kp EQUAL  &kp N1    &kp N2  &kp N3     &kp N4     &kp N5                  &kp N6     &kp N7     &kp N8   &kp N9    &kp N0  &kp MINUS
-   &kp TAB   &kp Q     &kp W   &kp E      &kp R      &kp T                   &kp Y      &kp U      &kp I    &kp O     &kp P   &kp BSLH
-  &kp CAPS   &kp A     &kp S   &kp D      &kp F      &kp G                   &kp H      &kp J      &kp K    &kp L  &kp SEMI    &kp SQT
- &kp LSHFT   &kp Z     &kp X   &kp C      &kp V      &kp B                   &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                    &kp LALT   &mo 1  &kp SPACE  &kp LCTRL  &kp BACKSPACE  &kp RET  &kp RCTRL   &kp RGUI    &mo 1  &kp RALT
+&kp EQUAL  &kp N1    &kp N2     &kp N3        &kp N4     &kp N5                 &kp MINUS &kp N0   &kp N9     &kp N8     &kp N7    &kp N6 
+&kp TAB    &kp Q     &kp W      &kp E         &kp R      &kp T                  &kp BSLH  &kp P    &kp O      &kp I      &kp U     &kp Y  
+&kp CAPS   &kp A     &kp S      &kp D         &kp F      &kp G                  &kp SQT   &kp SEMI &kp L      &kp K      &kp J     &kp H 
+&kp LSHFT  &kp Z     &kp X      &kp C         &kp V      &kp B                  &kp RSHFT &kp FSLH &kp DOT    &kp COMMA  &kp M     &kp N
+           &kp LALT  &kp LGUI   &kp BACKSPACE &kp LCTRL  &mo 1                            &kp RALT &kp RET    &kp SPACE  &kp RCTRL &mo 1
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -33,21 +26,21 @@
 
         funtion_layer {
             bindings = <
- &kp ESC    &kp F1         &kp F2   &kp F3  &kp F4  &kp F5          &kp F6    &kp F7            &kp F8             &kp F9  &kp F10    &kp F11
-  &trans  &kp HOME    &kp PAGE_UP  &kp INS  &trans  &trans          &trans    &trans            &kp UP             &trans   &trans    &kp F12
-  &trans   &kp END  &kp PAGE_DOWN  &kp DEL  &trans  &trans          &trans  &kp LEFT          &kp DOWN          &kp RIGHT   &trans  &kp TILDE
-  &trans    &trans         &trans   &trans  &trans  &trans          &trans    &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET   &trans     &trans
-                           &trans   &trans  &trans  &trans  &trans  &trans    &trans            &trans              &mo 2   &trans
+&kp ESC    &kp F1         &kp F2         &kp F3      &kp F4  &kp F5          &kp F11      &kp F10     &kp F9             &kp F8               &kp F7      &kp F6 
+&trans     &kp HOME       &kp PAGE_UP    &kp INS     &trans  &trans          &kp F12      &trans      &trans             &kp UP               &trans      &trans 
+&trans     &kp END        &kp PAGE_DOWN  &kp DEL     &trans  &trans          &kp TILDE    &trans      &kp RIGHT          &kp DOWN             &kp LEFT    &trans
+&trans     &trans         &trans         &trans      &trans  &trans          &trans       &trans      &kp RIGHT_BRACKET  &kp LEFT_BRACKET     &trans      &trans
+           &trans         &trans         &mo 2       &trans  &trans                       &trans      &trans             &mo 2                &trans      &trans
             >;
         };
 
         bt_layer {
             bindings = <
- &bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4          &trans  &trans      &trans      &trans  &trans  &trans
-      &reset        &trans        &trans        &trans        &trans        &trans          &trans  &trans      &trans      &trans  &trans  &trans
-      &trans        &trans        &trans        &trans        &trans        &trans          &trans  &trans      &trans      &trans  &trans  &trans
-      &trans        &trans        &trans        &trans        &trans        &trans          &trans  &trans  &bt BT_PRV  &bt BT_NXT  &trans  &trans
-                                  &trans        &trans    &bt BT_CLR        &trans  &trans  &trans  &trans      &trans      &trans  &trans
+&bootloader   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bootloader  &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
+&reset        &trans        &trans        &trans        &trans        &trans          &reset       &trans        &trans        &trans        &trans        &trans
+&bt BT_CLR    &trans        &trans        &trans        &trans        &trans          &bt BT_CLR   &trans        &trans        &trans        &trans        &trans
+&trans        &trans        &bt BT_PRV    &bt BT_NXT    &trans        &trans          &trans       &trans        &bt BT_NXT    &bt BT_PRV    &trans        &trans
+              &trans        &trans        &trans        &trans        &trans                       &trans        &trans        &trans        &trans        &trans
             >;
         };
     };
